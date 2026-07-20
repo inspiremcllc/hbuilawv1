@@ -67,6 +67,24 @@ export default function Home() {
     <main>
       <Hero />
 
+      <section className="statement-band section-pad">
+        <div className="container-site max-w-5xl">
+          <h2 className="font-display text-3xl leading-snug text-[var(--navy)] md:text-[2.6rem] md:leading-[1.25]">
+            When you choose H Bui Law, you&rsquo;re not just hiring a law firm&mdash;you&rsquo;re
+            gaining an advocate for the people who matter most. Our multilingual team guides
+            Southern California families through divorce, custody, and support with local insight
+            and specialist-level experience.
+          </h2>
+          <Link
+            href="/family-law"
+            className="mt-8 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--gold-dark)] transition hover:text-[var(--navy)]"
+          >
+            Learn More
+            <ArrowRight aria-hidden="true" size={16} />
+          </Link>
+        </div>
+      </section>
+
       <section className="section-pad-tight bg-white">
         <div className="container-site">
           <SectionHeading title="We Help With Life's Most Urgent Issues" />

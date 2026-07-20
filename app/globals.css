@@ -119,3 +119,24 @@ details > summary::-webkit-details-marker {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Hero video (Crowley-style full-bleed treatment) */
+.hero-poster-fallback {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+
+  .hero-poster-fallback {
+    display: block;
+  }
+}
+
+.statement-band {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(201, 148, 49, 0.1), transparent 34%),
+    var(--paper);
+}
