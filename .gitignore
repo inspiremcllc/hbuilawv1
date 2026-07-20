@@ -1,0 +1,14 @@
+.next/
+node_modules/
+.vercel/
+
+*.log
+next-dev-*.log
+next-dev-*.err.log
+
+.env
+.env.local
+.env.*.local
+
+out/
+dist/

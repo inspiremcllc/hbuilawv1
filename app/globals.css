@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --navy: #061b34;
+  --navy-2: #0a2749;
+  --gold: #c99431;
+  --gold-dark: #9a6d1d;
+  --warm: #fbfaf7;
+  --paper: #ffffff;
+  --soft: #eef1f4;
+  --ink: #071527;
+  --muted: #526071;
+  --line: #d9dee6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--warm);
+  color: var(--ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  letter-spacing: 0;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+summary {
+  outline-color: var(--gold);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(201, 148, 49, 0.24);
+}
+
+.font-display {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.container-site {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.navy-gradient {
+  background:
+    radial-gradient(circle at 80% 15%, rgba(201, 148, 49, 0.18), transparent 28%),
+    linear-gradient(135deg, #06172c 0%, #09284d 56%, #061b34 100%);
+}
+
+.gold-button {
+  background: linear-gradient(135deg, #d2a33e, #b98222);
+  color: #fff;
+  box-shadow: 0 16px 34px rgba(160, 111, 24, 0.24);
+}
+
+.gold-button:hover {
+  background: linear-gradient(135deg, #ddb14f, #a9771d);
+}
+
+.card-surface {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(217, 222, 230, 0.92);
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(6, 27, 52, 0.08);
+}
+
+.section-pad {
+  padding-block: clamp(64px, 8vw, 104px);
+}
+
+.section-pad-tight {
+  padding-block: clamp(42px, 6vw, 76px);
+}
+
+.map-grid {
+  background-color: #edf0f2;
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.9) 2px, transparent 2px),
+    linear-gradient(rgba(255, 255, 255, 0.9) 2px, transparent 2px),
+    linear-gradient(45deg, transparent 46%, rgba(149, 166, 177, 0.28) 46%, rgba(149, 166, 177, 0.28) 54%, transparent 54%);
+  background-size: 48px 48px, 48px 48px, 140px 140px;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
