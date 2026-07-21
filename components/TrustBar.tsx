@@ -2,7 +2,7 @@ import { trustItems } from '@/lib/site-data'
 
 export function TrustBar() {
   return (
-    <div className="card-surface relative z-10 -mt-12 p-5 md:p-7">
+    <div className="card-surface relative p-5 md:p-7">
       <div className="grid gap-5 md:grid-cols-4 md:divide-x md:divide-[var(--line)]">
         {trustItems.map((item) => {
           const Icon = item.icon

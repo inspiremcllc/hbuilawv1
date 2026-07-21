@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight, Phone } from 'lucide-react'
 import { phoneDisplay, phoneHref } from '@/lib/site-data'
-import { TrustBar } from './TrustBar'
 
 export function Hero() {
   return (
@@ -56,9 +55,6 @@ export function Hero() {
             </a>
           </div>
         </div>
-      </div>
-      <div className="container-site relative pb-2">
-        <TrustBar />
       </div>
     </section>
   )

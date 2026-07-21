@@ -5,6 +5,7 @@ import { AttorneyCard } from '@/components/AttorneyCard'
 import { CTASection } from '@/components/CTASection'
 import { FAQAccordion } from '@/components/FAQAccordion'
 import { Hero } from '@/components/Hero'
+import { TrustBar } from '@/components/TrustBar'
 import { LocationCard } from '@/components/LocationCard'
 import { PracticeAreaCard } from '@/components/PracticeAreaCard'
 import { SectionHeading } from '@/components/SectionHeading'
@@ -66,6 +67,12 @@ export default function Home() {
   return (
     <main>
       <Hero />
+
+      <section className="bg-[var(--warm)] py-10 md:py-14">
+        <div className="container-site">
+          <TrustBar />
+        </div>
+      </section>
 
       <section className="statement-band section-pad">
         <div className="container-site max-w-5xl">
