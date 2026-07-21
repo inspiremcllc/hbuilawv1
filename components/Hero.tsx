@@ -27,7 +27,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(6,23,44,0.72)] via-[rgba(6,23,44,0.45)] to-[rgba(6,23,44,0.82)]" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[rgba(4,15,29,0.9)] to-transparent" />
       </div>
-      <div className="container-site relative flex min-h-[78vh] items-center py-24">
+      <div className="container-site relative flex min-h-[82vh] items-center pb-24 pt-44">
         <div className="max-w-4xl text-center mx-auto">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--gold)]">
             Arcadia · Pasadena · Irvine
