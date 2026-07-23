@@ -77,7 +77,7 @@ export default function Home() {
       <section className="statement-band section-pad">
         <div className="container-site max-w-5xl">
           <h2 className="font-display text-3xl leading-snug text-[var(--navy)] md:text-[2.6rem] md:leading-[1.25]">
-            When you choose H Bui Law, you&rsquo;re not just hiring a law firm&mdash;you&rsquo;re
+            When you choose H Bui Law, you&rsquo;re not just hiring a law firm. You&rsquo;re
             gaining an advocate for the people who matter most. Our multilingual team guides
             Southern California families through divorce, custody, and support with local insight
             and specialist-level experience.
@@ -176,7 +176,7 @@ export default function Home() {
               <ArrowRight aria-hidden="true" className="text-[var(--gold)]" size={16} />
             </Link>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {attorneys.map((attorney) => (
               <AttorneyCard key={attorney.name} attorney={attorney} />
             ))}

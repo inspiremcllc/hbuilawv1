@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
 import { AttorneyCard } from '@/components/AttorneyCard'
@@ -23,16 +24,16 @@ export default function AttorneysPage() {
     <main>
       <PageHero
         title="Attorneys Focused on Strategy, Care, and Clear Communication"
-        copy="The H Bui Law mockup presents a multilingual team built to help clients understand options, prepare the record, and move through family law matters with steady guidance."
+        copy="Meet the H Bui Law team serving Southern California families with experienced counsel, clear communication, and a practical approach."
         crumbs={[{ label: 'Attorneys', href: '/attorneys' }]}
       />
       <section className="section-pad bg-white">
         <div className="container-site">
           <SectionHeading
             title="Our Attorneys"
-            copy="Placeholder profile details are included for pitch purposes and should be reviewed before any live launch."
+            copy="A multilingual legal team supporting clients through family law, criminal law, and related civil matters."
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {attorneys.map((attorney) => (
               <AttorneyCard key={attorney.name} attorney={attorney} profile />
             ))}
@@ -42,17 +43,29 @@ export default function AttorneysPage() {
       <section className="section-pad bg-[var(--warm)]">
         <div className="container-site grid gap-8">
           {attorneys.map((attorney) => (
-            <article key={attorney.name} className="card-surface grid gap-8 p-6 md:grid-cols-[220px_1fr] md:p-8">
+            <article
+              key={attorney.name}
+              className="card-surface grid gap-8 overflow-hidden p-6 md:grid-cols-[240px_1fr] md:p-8"
+            >
               <div>
-                <div className="grid size-24 place-items-center rounded-full bg-[var(--navy)] font-display text-3xl text-white">
-                  {attorney.initials}
+                <div className="relative aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-[8px] bg-[var(--soft)]">
+                  <Image
+                    src={attorney.image}
+                    alt={attorney.imageAlt}
+                    fill
+                    unoptimized
+                    sizes="(max-width: 767px) calc(100vw - 80px), 240px"
+                    className="object-cover"
+                  />
                 </div>
                 <h2 className="mt-6 font-display text-3xl text-[var(--navy)]">{attorney.name}</h2>
                 <p className="mt-2 text-sm font-semibold text-[var(--gold-dark)]">{attorney.role}</p>
               </div>
               <div className="grid gap-6 md:grid-cols-2">
                 <InfoBlock title="Practice focus" items={attorney.focus} />
-                <InfoBlock title="Languages" items={attorney.languages} />
+                {attorney.languages.length > 1 ? (
+                  <InfoBlock title="Languages" items={attorney.languages} />
+                ) : null}
                 <InfoBlock title="Education" items={[attorney.education]} />
                 <InfoBlock title="Admissions" items={[attorney.admissions]} />
                 <div className="md:col-span-2">

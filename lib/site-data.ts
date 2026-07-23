@@ -5,7 +5,6 @@ import {
   BriefcaseBusiness,
   CalendarCheck,
   FilePenLine,
-  Globe2,
   Handshake,
   HeartCrack,
   Landmark,
@@ -58,24 +57,28 @@ export const navLinks = [
 
 export const trustItems = [
   {
-    title: 'Certified Family Law Specialist',
-    detail: 'Specialist positioning for complex California family matters.',
-    icon: BadgeCheck,
+    image: '/recognition/california-board-legal-specialization.png',
+    alt: 'State Bar of California Board of Legal Specialization',
+    width: 402,
+    height: 374,
   },
   {
-    title: 'Super Lawyers Recognition',
-    detail: 'Professional recognition presented as a trust signal.',
-    icon: Scale,
+    image: '/recognition/super-lawyers-2026.png',
+    alt: 'Super Lawyers 2026',
+    width: 794,
+    height: 252,
   },
   {
-    title: 'Pasadena Top Attorney Recognition',
-    detail: 'Local credibility for San Gabriel Valley families.',
-    icon: Landmark,
+    image: '/recognition/pasadena-top-attorneys-2025.png',
+    alt: 'Pasadena Magazine Top Attorneys 2025',
+    width: 366,
+    height: 358,
   },
   {
-    title: 'Multilingual Team',
-    detail: 'English, Chinese, Spanish, and Vietnamese support.',
-    icon: Globe2,
+    image: '/recognition/avvo-excellent-rating.png',
+    alt: 'Avvo Excellent rating',
+    width: 316,
+    height: 306,
   },
 ]
 
@@ -540,48 +543,100 @@ export const practiceGridCards: PracticeCard[] = [
 
 export const attorneys = [
   {
-    name: 'Bichhanh "Hannah" Bui',
+    name: 'Bichhanh (Hannah) Bui',
     initials: 'BB',
-    role: 'Managing Attorney',
+    role: 'Certified Family Law Specialist',
+    image: '/team/bichhanh-hannah-bui.jpg',
+    imageAlt: 'Bichhanh Hannah Bui',
     focus: ['Divorce', 'Child Custody', 'Support', 'Property Division'],
     languages: ['English', 'Vietnamese'],
-    education: 'Education placeholder',
-    admissions: 'California admissions placeholder',
+    education: 'Whittier College School of Law; University of California, Riverside',
+    admissions: 'State Bar of California',
     helps:
-      'Hannah helps clients make sense of complex family law choices while keeping the legal strategy organized and practical.',
+      'Hannah guides clients through divorce, custody, support, property division, and post-judgment matters with practical, case-specific strategy.',
   },
   {
     name: 'Wenyi Zhang',
     initials: 'WZ',
     role: 'Senior Associate Attorney',
-    focus: ['Divorce', 'Support', 'Complex Financials'],
-    languages: ['English', 'Mandarin'],
-    education: 'Education placeholder',
-    admissions: 'California admissions placeholder',
+    image: '/team/wenyi-zhang.jpg',
+    imageAlt: 'Wenyi Zhang',
+    focus: ['Family Law', 'Complex Financial Matters', 'Civil Litigation'],
+    languages: ['English', 'Mandarin', 'Shanghainese'],
+    education:
+      'University of California, Berkeley, LL.M.; University of Southern California, M.P.A.',
+    admissions: 'State Bar of California',
     helps:
-      'Wenyi supports clients through financial questions, negotiation posture, and document-heavy divorce matters.',
+      'Wenyi brings a broad legal and cross-cultural perspective to family law and civil matters, including document-heavy and financially complex cases.',
   },
   {
     name: 'Grace Jo',
     initials: 'GJ',
-    role: 'Associate Attorney',
-    focus: ['Child Custody', 'Visitation', 'Restraining Orders'],
-    languages: ['English', 'Korean'],
-    education: 'Education placeholder',
-    admissions: 'California admissions placeholder',
+    role: 'Of Counsel',
+    image: '/team/grace-jo.jpg',
+    imageAlt: 'Grace Jo',
+    focus: ['Criminal Law', 'Family Law', 'Domestic Violence Matters'],
+    languages: ['English'],
+    education:
+      'Loyola Law School, J.D.; University of Southern California, B.A. and M.A. in Economics',
+    admissions: 'State Bar of California; U.S. District Court, Central District of California',
     helps:
-      'Grace helps clients prepare custody and safety-related matters with a careful record and steady communication.',
+      'Grace advises clients where criminal and family law issues intersect, including matters involving domestic violence, custody, and adoption.',
   },
   {
     name: 'Sara Memari',
     initials: 'SM',
     role: 'Associate Attorney',
-    focus: ['Divorce', 'Property Division', 'Prenuptial Agreements'],
-    languages: ['English', 'Farsi'],
-    education: 'Education placeholder',
-    admissions: 'California admissions placeholder',
+    image: '/team/sara-memari.jpg',
+    imageAlt: 'Sara Memari',
+    focus: ['Family Law', 'Divorce', 'Child Custody'],
+    languages: ['English'],
+    education:
+      'Southwestern Law School, J.D.; California State University, Northridge, B.A.',
+    admissions: 'State Bar of California',
     helps:
-      'Sara helps clients evaluate agreement terms, divorce priorities, and settlement paths with clear next steps.',
+      'Sara supports clients in family law matters with careful preparation, practical counseling, and a client-centered approach.',
+  },
+  {
+    name: 'Ilene Aguilar Ruiz',
+    initials: 'IR',
+    role: 'Of Counsel',
+    image: '/team/ilene-aguilar-ruiz.jpg',
+    imageAlt: 'Ilene Aguilar Ruiz',
+    focus: ['Family Law', 'Adoption', 'Domestic Violence Matters'],
+    languages: ['English'],
+    education: 'Loyola Law School, J.D.; California State University, Los Angeles',
+    admissions: 'State Bar of California',
+    helps:
+      'Ilene brings more than two decades of legal experience, thoughtful advocacy, and a strong commitment to client service.',
+  },
+  {
+    name: 'Cheryl Cruz',
+    initials: 'CC',
+    role: 'Associate Attorney',
+    image: '/team/cheryl-cruz.jpg',
+    imageAlt: 'Cheryl Cruz',
+    focus: ['Divorce', 'Custody and Visitation', 'Support', 'Restraining Orders'],
+    languages: ['English', 'Spanish'],
+    education:
+      'Southwestern Law School, J.D.; University of California, Riverside, B.A.',
+    admissions: 'State Bar of California',
+    helps:
+      'Cheryl focuses on family law and helps clients navigate dissolution, parentage, support, custody, and protective-order matters.',
+  },
+  {
+    name: 'Hiep Bui',
+    initials: 'HB',
+    role: 'Associate Attorney',
+    image: '/team/hiep-bui.jpg',
+    imageAlt: 'Hiep Bui',
+    focus: ['Family Law', 'Child Custody', 'Support', 'Personal Injury'],
+    languages: ['English'],
+    education:
+      'Chapman University Fowler School of Law, J.D.; University of California, Santa Barbara, B.S.',
+    admissions: 'State Bar of California',
+    helps:
+      'Hiep helps clients navigate divorce, custody, support, restraining-order, and plaintiff-side personal injury matters with a broad litigation perspective.',
   },
 ]
 
