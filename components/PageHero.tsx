@@ -30,14 +30,14 @@ export function PageHero({ title, copy, crumbs = [] }: PageHeroProps) {
             ))}
           </nav>
         ) : null}
-        <div className="grid gap-8 md:grid-cols-[1fr_360px] md:items-end">
+        <div className="grid gap-10 lg:grid-cols-[1fr_290px] lg:items-end">
           <div className="max-w-4xl">
             <h1 className="font-display text-4xl leading-tight md:text-6xl">{title}</h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/78">{copy}</p>
           </div>
-          <div className="card-surface bg-white p-5 text-[var(--navy)]">
-            <p className="font-display text-2xl">Ready to talk?</p>
-            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+          <div className="border-l border-white/24 pl-6">
+            <p className="font-display text-2xl text-white">Ready to talk?</p>
+            <p className="mt-2 text-sm leading-6 text-white/70">
               Start with a conflict check and private consultation request.
             </p>
             <div className="mt-5 grid gap-3">
@@ -50,7 +50,7 @@ export function PageHero({ title, copy, crumbs = [] }: PageHeroProps) {
               </Link>
               <a
                 href={phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded-[8px] border border-[var(--line)] px-4 py-3 text-sm font-semibold text-[var(--navy)] focus-visible:outline focus-visible:outline-2"
+                className="inline-flex items-center justify-center gap-2 rounded-[8px] border border-white/28 px-4 py-3 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2"
               >
                 <Phone aria-hidden="true" size={16} />
                 Call {phoneDisplay}

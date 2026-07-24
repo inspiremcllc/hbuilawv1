@@ -12,8 +12,8 @@ export function CTASection({
   copy = 'Start with a confidential consultation and a clear next step.',
 }: CTASectionProps) {
   return (
-    <section className="navy-gradient text-white">
-      <div className="container-site flex flex-col gap-8 py-12 md:flex-row md:items-center md:justify-between">
+    <section className="bg-[var(--navy)] text-white">
+      <div className="container-site flex flex-col gap-8 py-16 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl leading-tight md:text-5xl">{title}</h2>
           <p className="mt-4 text-base leading-7 text-white/78 md:text-lg">{copy}</p>

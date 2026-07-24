@@ -1,21 +1,17 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
-import { AttorneyCard } from '@/components/AttorneyCard'
+import { ArrowRight, ChevronRight, MapPin, Quote } from 'lucide-react'
 import { CTASection } from '@/components/CTASection'
 import { FAQAccordion } from '@/components/FAQAccordion'
 import { Hero } from '@/components/Hero'
-import { TrustBar } from '@/components/TrustBar'
-import { LocationCard } from '@/components/LocationCard'
-import { PracticeAreaCard } from '@/components/PracticeAreaCard'
 import { SectionHeading } from '@/components/SectionHeading'
-import { TestimonialCard } from '@/components/TestimonialCard'
+import { TeamShowcase } from '@/components/TeamShowcase'
+import { TrustBar } from '@/components/TrustBar'
 import {
-  attorneys,
   differentiators,
   locations,
   practiceGridCards,
-  practiceAreas,
   processSteps,
   testimonials,
 } from '@/lib/site-data'
@@ -31,10 +27,6 @@ export const metadata: Metadata = {
   },
 }
 
-const urgentSlugs = ['divorce', 'child-custody', 'support', 'restraining-orders']
-const urgentAreas = urgentSlugs
-  .map((slug) => practiceAreas.find((area) => area.slug === slug))
-  .filter((area): area is (typeof practiceAreas)[number] => Boolean(area))
 const homepageFaqs = [
   {
     question: 'How long does a divorce take in California?',
@@ -74,49 +66,44 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="statement-band section-pad">
-        <div className="container-site max-w-5xl">
-          <h2 className="font-display text-3xl leading-snug text-[var(--navy)] md:text-[2.6rem] md:leading-[1.25]">
-            When you choose H Bui Law, you&rsquo;re not just hiring a law firm. You&rsquo;re
-            gaining an advocate for the people who matter most. Our multilingual team guides
-            Southern California families through divorce, custody, and support with local insight
-            and specialist-level experience.
-          </h2>
-          <Link
-            href="/family-law"
-            className="mt-8 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--gold-dark)] transition hover:text-[var(--navy)]"
-          >
-            Learn More
-            <ArrowRight aria-hidden="true" size={16} />
-          </Link>
-        </div>
-      </section>
-
-      <section className="section-pad-tight bg-white">
-        <div className="container-site">
-          <SectionHeading title="We Help With Life's Most Urgent Issues" />
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {urgentAreas.map((area) => (
-              <PracticeAreaCard key={area.slug} area={area} compact />
-            ))}
+      <section className="section-pad bg-white">
+        <div className="container-site grid gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-24">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
+              Counsel for defining decisions
+            </p>
+            <h2 className="mt-5 font-display text-4xl leading-[1.16] text-[var(--navy)] md:text-5xl">
+              Specialist experience, grounded in what matters to your family.
+            </h2>
+            <p className="mt-7 max-w-xl text-lg leading-8 text-[var(--muted)]">
+              Our multilingual team brings local insight, careful preparation, and clear strategy
+              to divorce, custody, support, and related family law matters.
+            </p>
+            <Link
+              href="/family-law"
+              className="mt-8 inline-flex items-center gap-3 text-sm font-semibold text-[var(--navy)] focus-visible:outline focus-visible:outline-2"
+            >
+              Explore our approach
+              <ArrowRight aria-hidden="true" className="text-[var(--gold-dark)]" size={17} />
+            </Link>
           </div>
-        </div>
-      </section>
 
-      <section className="section-pad-tight bg-[var(--warm)]">
-        <div className="container-site">
-          <SectionHeading title="Why Clients Choose H Bui Law" />
-          <div className="mt-12 grid gap-8 md:grid-cols-4">
+          <div className="lg:pt-2">
             {differentiators.map((item) => {
               const Icon = item.icon
 
               return (
-                <article key={item.title} className="text-center">
-                  <Icon aria-hidden="true" className="mx-auto text-[var(--gold)]" size={44} />
-                  <h3 className="mt-5 font-display text-xl leading-tight text-[var(--navy)]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.body}</p>
+                <article
+                  key={item.title}
+                  className="grid grid-cols-[42px_1fr] gap-5 border-b border-[var(--line)] py-6 first:pt-0 last:border-b-0"
+                >
+                  <Icon aria-hidden="true" className="mt-1 text-[var(--gold-dark)]" size={28} />
+                  <div>
+                    <h3 className="font-display text-xl leading-tight text-[var(--navy)]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{item.body}</p>
+                  </div>
                 </article>
               )
             })}
@@ -124,123 +111,202 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-pad navy-gradient text-white">
-        <div className="container-site">
-          <SectionHeading title="Our Practice Areas" inverse />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {practiceGridCards.map((area) => (
-              <PracticeAreaCard key={area.slug} area={area} compact />
-            ))}
+      <section className="section-pad bg-[var(--warm)]">
+        <div className="container-site grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+          <div className="max-w-md lg:sticky lg:top-40 lg:self-start">
+            <SectionHeading
+              title="Family law support for the issue in front of you."
+              copy="Start with the matter that needs attention now. We will help you understand how the other pieces connect."
+              align="left"
+            />
+            <Link
+              href="/family-law"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[var(--navy)] focus-visible:outline focus-visible:outline-2"
+            >
+              View family law services
+              <ArrowRight aria-hidden="true" className="text-[var(--gold-dark)]" size={16} />
+            </Link>
+          </div>
+
+          <div className="grid sm:grid-cols-2 sm:gap-x-10">
+            {practiceGridCards.map((area) => {
+              const Icon = area.icon
+
+              return (
+                <Link
+                  key={area.slug}
+                  href={area.path}
+                  className="group grid grid-cols-[34px_1fr_18px] gap-4 border-b border-[var(--line)] py-7 focus-visible:outline focus-visible:outline-2"
+                >
+                  <Icon aria-hidden="true" className="mt-1 text-[var(--gold-dark)]" size={23} />
+                  <div>
+                    <h3 className="font-display text-xl leading-tight text-[var(--navy)]">
+                      {area.shortTitle}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                      {area.description}
+                    </p>
+                  </div>
+                  <ChevronRight
+                    aria-hidden="true"
+                    className="mt-1 text-[var(--gold-dark)] transition group-hover:translate-x-1"
+                    size={18}
+                  />
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>
 
       <section className="section-pad bg-white">
-        <div className="container-site">
-          <SectionHeading title="What Happens After You Contact Us" />
-          <div className="relative mt-14 grid gap-6 lg:grid-cols-4">
-            <div className="absolute left-[12%] right-[12%] top-11 hidden h-px bg-[var(--gold)] lg:block" />
-            {processSteps.map((step, index) => {
-              const Icon = step.icon
+        <div className="container-site grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-20">
+          <div className="relative min-h-[520px] overflow-hidden rounded-[8px] bg-[var(--soft)]">
+            <Image
+              src="/images/southern-california-law-office.jpg"
+              alt="Southern California office setting"
+              fill
+              priority={false}
+              sizes="(max-width: 1023px) calc(100vw - 32px), 520px"
+              className="object-cover"
+            />
+            <div className="absolute bottom-0 left-0 max-w-xs bg-[var(--navy)] p-6 text-white">
+              <p className="font-display text-2xl leading-tight">
+                A clear process when the next step feels uncertain.
+              </p>
+            </div>
+          </div>
 
-              return (
-                <article key={step.title} className="relative text-center">
-                  <div className="mx-auto grid size-11 place-items-center rounded-full bg-[var(--navy)] text-sm font-semibold text-white">
-                    {index + 1}
-                  </div>
-                  <Icon aria-hidden="true" className="mx-auto mt-6 text-[var(--gold)]" size={38} />
-                  <h3 className="mt-5 font-display text-xl leading-tight text-[var(--navy)]">
-                    {step.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{step.body}</p>
-                </article>
-              )
-            })}
+          <div>
+            <SectionHeading
+              title="What happens after you contact us."
+              copy="We begin with the facts, identify immediate priorities, and build a plan around your goals."
+              align="left"
+            />
+            <div className="mt-9">
+              {processSteps.map((step, index) => {
+                const Icon = step.icon
+
+                return (
+                  <article
+                    key={step.title}
+                    className="grid grid-cols-[44px_1fr] gap-5 border-b border-[var(--line)] py-6 first:pt-0 last:border-b-0"
+                  >
+                    <div className="grid size-11 place-items-center rounded-full bg-[var(--navy)] text-white">
+                      <Icon aria-hidden="true" size={20} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--gold-dark)]">
+                        Step {index + 1}
+                      </p>
+                      <h3 className="mt-2 font-display text-xl leading-tight text-[var(--navy)]">
+                        {step.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{step.body}</p>
+                    </div>
+                  </article>
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section-pad-tight bg-[var(--warm)]">
+      <section className="section-pad bg-[var(--warm)]">
         <div className="container-site">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <SectionHeading
-              title="Our Attorneys"
-              copy="Compassionate advocates. Strategic counsel. Multilingual support."
+              title="A team prepared for the human side of family law."
+              copy="Experienced counsel, practical communication, and multilingual support across Southern California."
               align="left"
             />
             <Link
               href="/attorneys"
               className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--navy)] focus-visible:outline focus-visible:outline-2"
             >
-              Meet the Team
-              <ArrowRight aria-hidden="true" className="text-[var(--gold)]" size={16} />
+              Meet every attorney
+              <ArrowRight aria-hidden="true" className="text-[var(--gold-dark)]" size={16} />
             </Link>
           </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {attorneys.map((attorney) => (
-              <AttorneyCard key={attorney.name} attorney={attorney} />
-            ))}
-          </div>
+          <TeamShowcase />
         </div>
       </section>
 
-      <section className="bg-[var(--navy)] text-white">
-        <div className="container-site grid gap-8 py-14 lg:grid-cols-[300px_1fr] lg:items-center">
-          <div>
-            <p className="text-5xl leading-none text-[var(--gold)]">"</p>
-            <h2 className="font-display text-3xl leading-tight md:text-5xl">What Our Clients Say</h2>
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2"
-            >
-              Request a Consultation
-              <ArrowRight aria-hidden="true" size={16} className="text-[var(--gold)]" />
-            </Link>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard
+      <section className="section-pad bg-white">
+        <div className="container-site grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
+          <article>
+            <Quote aria-hidden="true" className="text-[var(--gold-dark)]" size={38} />
+            <blockquote className="mt-7 max-w-3xl font-display text-3xl leading-snug text-[var(--navy)] md:text-5xl">
+              “{testimonials[0].quote}”
+            </blockquote>
+            <p className="mt-7 text-sm font-semibold text-[var(--muted)]">
+              {testimonials[0].source}
+            </p>
+          </article>
+          <div className="lg:border-l lg:border-[var(--line)] lg:pl-12">
+            {testimonials.slice(1).map((testimonial) => (
+              <article
                 key={testimonial.source}
-                quote={testimonial.quote}
-                source={testimonial.source}
-              />
+                className="border-b border-[var(--line)] py-7 first:pt-0 last:border-b-0"
+              >
+                <blockquote className="text-lg leading-8 text-[var(--navy)]">
+                  “{testimonial.quote}”
+                </blockquote>
+                <p className="mt-4 text-sm font-semibold text-[var(--muted)]">
+                  {testimonial.source}
+                </p>
+              </article>
             ))}
           </div>
         </div>
-        <div className="bg-white py-5">
-          <p className="container-site text-center text-xs leading-6 text-[var(--muted)]">
-            Testimonials reflect individual experiences. Results vary based on the facts and law
-            applicable to each matter. No testimonial guarantees a similar outcome.
-          </p>
+        <p className="container-site mt-12 max-w-4xl text-xs leading-6 text-[var(--muted)]">
+          Testimonials reflect individual experiences. Results vary based on the facts and law
+          applicable to each matter. No testimonial guarantees a similar outcome.
+        </p>
+      </section>
+
+      <section className="section-pad-tight bg-[var(--warm)]">
+        <div className="container-site grid gap-12 lg:grid-cols-[0.68fr_1.32fr] lg:gap-20">
+          <SectionHeading
+            title="Local offices, one coordinated team."
+            copy="Consultations are available by appointment in Arcadia, Pasadena, and Irvine."
+            align="left"
+          />
+          <div>
+            {locations.map((location) => (
+              <article
+                key={location.city}
+                className="grid gap-5 border-b border-[var(--line)] py-7 first:pt-0 md:grid-cols-[180px_1fr_auto] md:items-center"
+              >
+                <div className="flex items-center gap-3">
+                  <MapPin aria-hidden="true" className="text-[var(--gold-dark)]" size={21} />
+                  <h3 className="font-display text-2xl text-[var(--navy)]">{location.city}</h3>
+                </div>
+                <div>
+                  <p className="text-sm leading-6 text-[var(--muted)]">{location.address}</p>
+                  <p className="mt-1 text-sm font-semibold text-[var(--navy)]">{location.phone}</p>
+                </div>
+                <Link
+                  href={`/locations#${location.city.toLowerCase()}`}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--navy)] focus-visible:outline focus-visible:outline-2"
+                >
+                  Office details
+                  <ArrowRight aria-hidden="true" className="text-[var(--gold-dark)]" size={16} />
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="section-pad-tight bg-white">
-        <div className="container-site">
-          <SectionHeading title="Our Locations" />
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {locations.map((location) => (
-              <LocationCard key={location.city} location={location} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-pad-tight bg-[var(--warm)]">
-        <div className="container-site grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-          <SectionHeading title="Frequently Asked Questions" align="left" />
+        <div className="container-site grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-20">
+          <SectionHeading
+            title="Questions that often come first."
+            copy="Every matter is different. These answers provide a starting point, not legal advice."
+            align="left"
+          />
           <FAQAccordion items={homepageFaqs} />
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="container-site grid gap-6 py-12 md:grid-cols-3">
-          {['Arcadia', 'Pasadena', 'Irvine'].map((city) => (
-            <div key={city} className="flex items-start gap-3 text-sm leading-6 text-[var(--muted)]">
-              <CheckCircle2 aria-hidden="true" className="mt-0.5 shrink-0 text-[var(--gold)]" size={18} />
-              <span>Family law consultations available by appointment in {city}.</span>
-            </div>
-          ))}
         </div>
       </section>
 

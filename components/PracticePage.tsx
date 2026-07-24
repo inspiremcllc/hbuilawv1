@@ -98,7 +98,7 @@ export function PracticePage({ area }: PracticePageProps) {
           </main>
           <aside className="lg:sticky lg:top-32 lg:self-start">
             <div className="card-surface overflow-hidden">
-              <div className="h-40 bg-[url('/images/southern-california-law-office.png')] bg-cover bg-center" />
+              <div className="h-40 bg-[url('/images/southern-california-law-office.jpg')] bg-cover bg-center" />
               <div className="p-5">
                 <p className="font-display text-2xl text-[var(--navy)]">Related Practice Areas</p>
                 <div className="mt-5 grid gap-3">

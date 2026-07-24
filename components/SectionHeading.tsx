@@ -24,8 +24,8 @@ export function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className={`font-display text-3xl leading-tight md:text-5xl ${textColor}`}>{title}</h2>
-      <div className="mx-auto mt-4 h-px w-16 bg-[var(--gold)]" />
+      <h2 className={`font-display text-3xl leading-tight md:text-[2.8rem] ${textColor}`}>{title}</h2>
+      <div className={`${align === 'center' ? 'mx-auto' : ''} mt-5 h-px w-14 bg-[var(--gold)]`} />
       {copy ? <p className={`mt-5 text-base leading-7 md:text-lg ${copyColor}`}>{copy}</p> : null}
     </div>
   )
