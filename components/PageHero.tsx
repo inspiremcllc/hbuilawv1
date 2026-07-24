@@ -11,9 +11,9 @@ type PageHeroProps = {
 export function PageHero({ title, copy, crumbs = [] }: PageHeroProps) {
   return (
     <section className="navy-gradient text-white">
-      <div className="container-site py-16 md:py-24">
+      <div className="container-site py-11 sm:py-14 md:py-20">
         {crumbs.length ? (
-          <nav className="mb-7 text-xs text-white/60" aria-label="Breadcrumb">
+          <nav className="mb-5 text-xs text-white/60 md:mb-7" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-white focus-visible:outline focus-visible:outline-2">
               Home
             </Link>
@@ -30,12 +30,12 @@ export function PageHero({ title, copy, crumbs = [] }: PageHeroProps) {
             ))}
           </nav>
         ) : null}
-        <div className="grid gap-10 lg:grid-cols-[1fr_290px] lg:items-end">
+        <div className="grid gap-8 lg:grid-cols-[1fr_290px] lg:items-end lg:gap-10">
           <div className="max-w-4xl">
-            <h1 className="font-display text-4xl leading-tight md:text-6xl">{title}</h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-white/78">{copy}</p>
+            <h1 className="font-display text-[2rem] leading-[1.15] sm:text-4xl md:text-6xl">{title}</h1>
+            <p className="mt-5 max-w-3xl text-base leading-7 text-white/78 md:mt-6 md:text-lg md:leading-8">{copy}</p>
           </div>
-          <div className="border-l border-white/24 pl-6">
+          <div className="hidden border-l border-white/24 pl-6 md:block">
             <p className="font-display text-2xl text-white">Ready to talk?</p>
             <p className="mt-2 text-sm leading-6 text-white/70">
               Start with a conflict check and private consultation request.

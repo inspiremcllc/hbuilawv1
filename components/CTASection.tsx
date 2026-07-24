@@ -13,7 +13,7 @@ export function CTASection({
 }: CTASectionProps) {
   return (
     <section className="bg-[var(--navy)] text-white">
-      <div className="container-site flex flex-col gap-8 py-16 md:flex-row md:items-center md:justify-between">
+      <div className="container-site flex flex-col gap-7 py-12 sm:py-16 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
           <h2 className="font-display text-3xl leading-tight md:text-5xl">{title}</h2>
           <p className="mt-4 text-base leading-7 text-white/78 md:text-lg">{copy}</p>

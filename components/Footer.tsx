@@ -5,13 +5,12 @@ import { locations, navLinks, phoneDisplay, phoneHref, practiceAreas } from '@/l
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--navy)] pb-20 text-white md:pb-0">
+    <footer className="bg-[var(--navy)] pb-[calc(5rem+env(safe-area-inset-bottom))] text-white md:pb-0">
       <div className="container-site grid gap-10 py-12 md:grid-cols-[1.2fr_2fr_1fr]">
         <div>
           <Link
             href="/"
             className="inline-flex items-center gap-4 focus-visible:outline focus-visible:outline-2"
-            aria-label="H Bui Law home"
           >
             <Image
               src="/h-bui-logo.png"

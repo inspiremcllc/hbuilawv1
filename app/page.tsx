@@ -161,7 +161,7 @@ export default function Home() {
 
       <section className="section-pad bg-white">
         <div className="container-site grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-20">
-          <div className="relative min-h-[520px] overflow-hidden rounded-[8px] bg-[var(--soft)]">
+          <div className="relative min-h-[400px] overflow-hidden rounded-[8px] bg-[var(--soft)] sm:min-h-[520px]">
             <Image
               src="/images/southern-california-law-office.jpg"
               alt="Southern California office setting"

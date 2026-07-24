@@ -18,29 +18,29 @@ export function LocationCard({ location, detailed = false }: LocationCardProps) 
   return (
     <article id={anchor} className="card-surface overflow-hidden">
       <div className="grid gap-0 md:grid-cols-[160px_1fr]">
-        <div className="map-grid relative min-h-[180px]">
+        <div className="map-grid relative min-h-32 md:min-h-[180px]">
           <div className="absolute left-1/2 top-1/2 grid size-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[var(--navy)] text-white shadow-lg">
             <MapPin aria-hidden="true" size={22} />
           </div>
         </div>
-        <div className="p-6">
+        <div className="p-5 sm:p-6">
           <h3 className="font-display text-2xl text-[var(--navy)]">{location.city}</h3>
           <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{location.address}</p>
           <p className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[var(--navy)]">
             <Phone aria-hidden="true" size={16} className="text-[var(--gold)]" />
             {location.phone}
           </p>
-          <div className="mt-5 flex flex-wrap gap-3">
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href={`/locations#${anchor}`}
-              className="inline-flex items-center gap-2 rounded-[8px] bg-[var(--navy)] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[var(--navy-2)] focus-visible:outline focus-visible:outline-2"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] bg-[var(--navy)] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[var(--navy-2)] focus-visible:outline focus-visible:outline-2 sm:w-auto"
             >
               <Navigation aria-hidden="true" size={16} />
               Directions
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-[8px] border border-[var(--line)] px-4 py-3 text-sm font-semibold text-[var(--navy)] transition hover:border-[var(--gold)] focus-visible:outline focus-visible:outline-2"
+              className="inline-flex w-full items-center justify-center rounded-[8px] border border-[var(--line)] px-4 py-3 text-sm font-semibold text-[var(--navy)] transition hover:border-[var(--gold)] focus-visible:outline focus-visible:outline-2 sm:w-auto"
             >
               Request Consultation
             </Link>

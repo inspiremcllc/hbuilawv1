@@ -23,11 +23,11 @@ export default function PaymentPage() {
       />
       <section className="section-pad bg-white">
         <div className="container-site">
-          <div className="mx-auto max-w-3xl card-surface p-8 text-center md:p-12">
+          <div className="card-surface mx-auto max-w-3xl p-5 text-center sm:p-8 md:p-12">
             <div className="mx-auto grid size-20 place-items-center rounded-full bg-[var(--navy)] text-[var(--gold)]">
               <LockKeyhole aria-hidden="true" size={34} />
             </div>
-            <h2 className="mt-8 font-display text-4xl text-[var(--navy)]">
+            <h2 className="mt-7 font-display text-3xl leading-tight text-[var(--navy)] sm:mt-8 sm:text-4xl">
               Existing Client Payment Portal
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-base leading-8 text-[var(--muted)]">
@@ -36,7 +36,7 @@ export default function PaymentPage() {
             </p>
             <button
               type="button"
-              className="gold-button mt-8 inline-flex items-center justify-center gap-2 rounded-[8px] px-7 py-4 text-sm font-semibold focus-visible:outline focus-visible:outline-2"
+              className="gold-button mt-8 inline-flex w-full items-center justify-center gap-2 rounded-[8px] px-4 py-4 text-sm font-semibold focus-visible:outline focus-visible:outline-2 sm:w-auto sm:px-7"
             >
               Continue to Secure Payment
               <ArrowRight aria-hidden="true" size={18} />

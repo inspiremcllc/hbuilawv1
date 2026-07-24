@@ -14,8 +14,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-white">
       <div className="bg-[var(--navy)] text-white">
-        <div className="container-site flex flex-wrap items-center justify-between gap-3 py-3 text-xs md:text-sm">
-          <div className="flex items-center gap-2">
+        <div className="container-site flex flex-wrap items-center justify-between gap-3 py-2.5 text-[11px] sm:text-xs md:text-sm">
+          <div className="flex items-center gap-2 max-[359px]:hidden">
             <MapPin aria-hidden="true" size={15} className="text-[var(--gold)]" />
             <span>Arcadia | Pasadena | Irvine</span>
           </div>
@@ -32,7 +32,7 @@ export function SiteHeader() {
           </Link>
         </div>
       </div>
-      <div className="container-site flex h-24 items-center justify-between gap-6">
+      <div className="container-site flex h-20 items-center justify-between gap-4 md:h-24 md:gap-6">
         <Link
           href="/"
           className="inline-flex items-center gap-3 text-[var(--navy)] focus-visible:outline focus-visible:outline-2"
@@ -41,12 +41,12 @@ export function SiteHeader() {
           <Image
             src="/h-bui-logo.png"
             alt=""
-            width={56}
-            height={56}
+            width={48}
+            height={48}
             priority
-            className="size-14 shrink-0 bg-white object-contain"
+            className="size-12 shrink-0 bg-white object-contain md:size-14"
           />
-          <span className="font-display text-2xl leading-tight sm:text-3xl">H Bui Law</span>
+          <span className="font-display text-[1.4rem] leading-tight sm:text-3xl">H Bui Law</span>
         </Link>
         <nav aria-label="Primary navigation" className="hidden items-center gap-5 xl:flex">
           {navLinks.slice(0, 7).map((link) => (

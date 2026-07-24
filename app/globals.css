@@ -21,10 +21,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
+  overflow-x: clip;
   background: var(--warm);
   color: var(--ink);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
@@ -87,6 +89,16 @@ summary {
 
 .section-pad-tight {
   padding-block: clamp(42px, 6vw, 76px);
+}
+
+@media (max-width: 639px) {
+  .section-pad {
+    padding-block: 52px;
+  }
+
+  .section-pad-tight {
+    padding-block: 40px;
+  }
 }
 
 .map-grid {

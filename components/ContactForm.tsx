@@ -23,7 +23,7 @@ export function ContactForm() {
 
   return (
     <form
-      className="card-surface grid gap-5 p-6 md:p-8"
+      className="card-surface grid gap-5 p-4 sm:p-6 md:p-8"
       onSubmit={(event) => {
         event.preventDefault()
         setSubmitted(true)

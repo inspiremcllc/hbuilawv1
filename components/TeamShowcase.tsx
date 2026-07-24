@@ -10,7 +10,7 @@ export function TeamShowcase() {
     <div className="grid gap-6 lg:grid-cols-[1.02fr_1.65fr]">
       <Link
         href="/attorneys"
-        className="group relative min-h-[560px] overflow-hidden rounded-[8px] bg-[var(--soft)] focus-visible:outline focus-visible:outline-2"
+        className="group relative min-h-[440px] overflow-hidden rounded-[8px] bg-[var(--soft)] focus-visible:outline focus-visible:outline-2 sm:min-h-[560px]"
       >
         <Image
           src={featured.image}
@@ -30,7 +30,7 @@ export function TeamShowcase() {
         </div>
       </Link>
 
-      <div className="grid gap-x-5 gap-y-8 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid grid-cols-2 gap-x-3 gap-y-7 sm:gap-x-5 sm:gap-y-8 md:grid-cols-3">
         {team.map((attorney) => (
           <article key={attorney.name}>
             <Link
@@ -43,14 +43,14 @@ export function TeamShowcase() {
                   alt={attorney.imageAlt}
                   fill
                   unoptimized
-                  sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) 33vw, 240px"
+                  sizes="(max-width: 639px) 44vw, (max-width: 1023px) 33vw, 240px"
                   className="object-cover object-top transition duration-300 group-hover:scale-[1.02]"
                 />
               </div>
-              <h3 className="mt-4 font-display text-xl leading-tight text-[var(--navy)]">
+              <h3 className="mt-3 font-display text-lg leading-tight text-[var(--navy)] sm:mt-4 sm:text-xl">
                 {attorney.name}
               </h3>
-              <p className="mt-1 text-sm font-semibold text-[var(--gold-dark)]">
+              <p className="mt-1 text-xs font-semibold leading-5 text-[var(--gold-dark)] sm:text-sm">
                 {attorney.role}
               </p>
             </Link>

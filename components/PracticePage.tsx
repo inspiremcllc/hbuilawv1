@@ -21,14 +21,17 @@ export function PracticePage({ area }: PracticePageProps) {
         crumbs={[{ label: area.shortTitle, href: area.path }]}
       />
       <section className="section-pad bg-white">
-        <div className="container-site grid gap-10 lg:grid-cols-[250px_1fr_280px]">
-          <aside className="lg:sticky lg:top-32 lg:self-start">
-            <div className="overflow-hidden rounded-[8px] border border-[var(--line)] bg-[#f7f8f9]">
+        <div className="container-site grid gap-8 lg:grid-cols-[250px_1fr_280px] lg:gap-10">
+          <aside className="min-w-0 overflow-hidden lg:sticky lg:top-32 lg:self-start">
+            <nav
+              aria-label="Practice areas"
+              className="flex w-full snap-x gap-2 overflow-x-auto pb-2 lg:block lg:overflow-hidden lg:rounded-[8px] lg:border lg:border-[var(--line)] lg:bg-[#f7f8f9] lg:pb-0"
+            >
               {practiceAreas.map((practice) => (
                 <Link
                   key={practice.path}
                   href={practice.path}
-                  className={`block border-b border-[var(--line)] px-4 py-3 text-sm font-semibold last:border-b-0 focus-visible:outline focus-visible:outline-2 ${
+                  className={`block shrink-0 snap-start whitespace-nowrap rounded-[8px] border border-[var(--line)] px-4 py-3 text-sm font-semibold focus-visible:outline focus-visible:outline-2 lg:rounded-none lg:border-x-0 lg:border-t-0 lg:last:border-b-0 ${
                     practice.slug === area.slug
                       ? 'bg-[var(--navy)] text-white'
                       : 'text-[var(--navy)] hover:bg-white'
@@ -37,8 +40,8 @@ export function PracticePage({ area }: PracticePageProps) {
                   {practice.shortTitle}
                 </Link>
               ))}
-            </div>
-            <div className="card-surface mt-5 p-5">
+            </nav>
+            <div className="card-surface mt-5 hidden p-5 md:block">
               <p className="font-display text-2xl text-[var(--navy)]">Ready to talk?</p>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
                 We are here to listen and help you understand your options.

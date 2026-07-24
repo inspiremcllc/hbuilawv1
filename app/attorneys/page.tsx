@@ -54,10 +54,10 @@ export default function AttorneysPage() {
             {attorneys.map((attorney, index) => (
               <article
                 key={attorney.name}
-                className="grid gap-10 border-b border-[var(--line)] py-14 first:pt-8 lg:grid-cols-[360px_1fr] lg:gap-20"
+                className="grid gap-7 border-b border-[var(--line)] py-10 first:pt-6 sm:gap-10 sm:py-14 lg:grid-cols-[360px_1fr] lg:gap-20"
               >
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="relative aspect-[4/5] w-full max-w-[360px] overflow-hidden rounded-[8px] bg-[var(--soft)]">
+                <div className={`flex justify-center lg:block ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <div className="relative aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-[8px] bg-[var(--soft)] sm:max-w-[360px]">
                     <Image
                       src={attorney.image}
                       alt={attorney.imageAlt}
@@ -69,7 +69,7 @@ export default function AttorneysPage() {
                   </div>
                 </div>
                 <div className={`self-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <h2 className="font-display text-4xl leading-tight text-[var(--navy)]">
+                  <h2 className="font-display text-3xl leading-tight text-[var(--navy)] sm:text-4xl">
                     {attorney.name}
                   </h2>
                   <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-[var(--gold-dark)]">
@@ -79,7 +79,7 @@ export default function AttorneysPage() {
                     {attorney.helps}
                   </p>
 
-                  <div className="mt-8 grid gap-7 sm:grid-cols-2">
+                  <div className="mt-7 grid gap-6 sm:mt-8 sm:grid-cols-2 sm:gap-7">
                     <InfoBlock title="Practice focus" items={attorney.focus} />
                     {attorney.languages.length > 1 ? (
                       <InfoBlock title="Languages" items={attorney.languages} />
