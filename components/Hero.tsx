@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Phone } from 'lucide-react'
+import { HeroVideo } from '@/components/HeroVideo'
 import { phoneDisplay, phoneHref } from '@/lib/site-data'
 
 export function Hero() {
@@ -15,6 +16,7 @@ export function Hero() {
           sizes="100vw"
           className="object-cover"
         />
+        <HeroVideo />
         <div className="image-wash absolute inset-0" />
       </div>
       <div className="container-site relative flex min-h-[76dvh] items-end py-20 md:items-center">
